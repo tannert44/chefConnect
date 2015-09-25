@@ -1,0 +1,40 @@
+.nav-onLoad {
+  margin-bottom: 0; }
+
+.chefconnect-welcome {
+  color: #fff;
+  font-size: 65px;
+  vertical-align: middle; }
+
+.welcome-input {
+  color: #fff; }
+
+.food-image-div {
+  position: relative;
+  background: url("http://www.soupehe.com/images/high-resolution-quality-kitchen-10-damascus-steel-chef-knife-2000-x-816.jpg") no-repeat center center;
+  background-size: 100% auto;
+  height: 385px; }
+
+.why-chefconnect {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5; }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+  background-color: #b3c2bf; }
+
+.nav-pills > li.active > a:hover {
+  background-color: #c0dfd9; }
+
+.navbar-default {
+  background-color: #e9ece5;
+  border-color: #b3c2bf; }
+
+.logAndReg {
+  color: #3b3a36; }
+
+/*# sourceMappingURL=main.css.map */
