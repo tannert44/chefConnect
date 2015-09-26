@@ -1,4 +1,4 @@
-app.controller( 'RegisterCtrl', [
+app.controller( 'ProfileCtrl', [
   '$scope',
   '$firebaseObject',
   function($scope, $firebaseObject){
