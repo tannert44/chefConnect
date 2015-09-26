@@ -22,7 +22,8 @@
   border-top: 1px solid #e5e5e5;
   text-align: center;
   font-size: 16px;
-  line-height: 1.5; }
+  line-height: 1.5;
+  background-color: #e9ece5; }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus {
   background-color: #b3c2bf; }
@@ -32,9 +33,15 @@
 
 .navbar-default {
   background-color: #e9ece5;
-  border-color: #b3c2bf; }
+  border-color: #b3c2bf;
+  border-size: 1px; }
 
 .logAndReg {
   color: #3b3a36; }
+
+btn-default {
+  color: #333;
+  background-color: #e9ece5;
+  border-color: #ccc; }
 
 /*# sourceMappingURL=main.css.map */
