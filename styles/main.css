@@ -1,3 +1,10 @@
+ul {
+  list-style-type: none; }
+
+html, body {
+  height: 100%;
+  min-height: 100%; }
+
 .nav-onLoad {
   margin-bottom: 0; }
 
@@ -70,5 +77,45 @@
 .email-container {
   border-bottom: 1px solid #3b3a36;
   padding-bottom: 25px; }
+
+.pale-blue-border {
+  border: 2px solid #b3c2bf; }
+
+.name-container {
+  background-color: #3b3a36;
+  color: #e9ece5;
+  height: 100%;
+  min-height: 100%;
+  font: Trebuchet MS, Tahoma, Georgia, sans-serif;
+  font-size: 1em;
+  padding-top: 150px; }
+
+.profile-container {
+  background-color: #3b3a36;
+  color: #e9ece5;
+  height: 100%;
+  min-height: 100%;
+  font: Trebuchet MS, Tahoma, Georgia, sans-serif;
+  font-size: 1em;
+  padding: 20px; }
+
+.profile-photo-container {
+  margin: 10px; }
+
+.about-you-container {
+  margin: 10px; }
+
+.business-info-container {
+  margin-left: 10px; }
+
+.pub-recipe-container {
+  margin: 10px; }
+
+.pri-recipe-container {
+  margin: 10px; }
+
+.search-repo-inputs {
+  display: block;
+  margin: 10px; }
 
 /*# sourceMappingURL=main.css.map */

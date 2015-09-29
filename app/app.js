@@ -15,6 +15,14 @@ app.config(['$routeProvider',
         templateUrl: 'partials/profile.html',
         controller: 'ProfileCtrl'
       })
+      .when('/browse', {
+        templateUrl: 'partials/browse.html',
+        controller: 'BrowseCtrl'
+      })
+      .when('/createrecipe', {
+        templateUrl: 'partials/createrecipe.html',
+        controller: 'CreateRecCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
