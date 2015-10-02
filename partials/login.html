@@ -7,7 +7,24 @@
   </div>
 
   <ul class="nav nav-pills pull-right">
-    <li role="presentation" class="active"><a href="#/" class="logAndReg">Login</a></li>
+     <li role="presentation">
+       <div class="dropdown">
+        <a class="dropdown-toggle logAndReg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Login
+        </a>
+        <ul class="dropdown-menu form" aria-labelledby="dropdownMenu1">
+          <li>
+            <label>Email:</label>
+            <input type="email" class="form-control" placeholder="email" ng-model="emailInputLog">
+          </li>
+          <li>
+            <label>Password:</label>
+            <input type="password" class="form-control"  placeholder="password" ng-model="passInputLog">
+          </li>
+          <li><button class="btn btn-default btn-small go-btn" ng-click="logUser()">Go!</button></li>
+        </ul>
+      </div>
+     </li>
     <li role="presentation"><a href="#/register" class="logAndReg">Register</a></li>
   </ul>
 

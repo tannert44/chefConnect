@@ -49,7 +49,7 @@ html, body {
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus{
-    background-color: #b3c2bf;
+    background-color: $pale-blue;
 }
 
 .nav-pills>li.active>a:hover{
@@ -151,4 +151,22 @@ html, body {
 .search-repo-inputs {
   display: block;
   margin: 10px;
+}
+
+.dropdown {
+  padding: 10px 15px;
+}
+
+
+.dropdown-toggle:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  padding: 20px;
+}
+
+.go-btn {
+ margin: 10px;
 }
