@@ -131,4 +131,14 @@ html, body {
 .go-btn {
   margin: 10px; }
 
+.enter-name {
+  cursor: pointer; }
+
+.add-name-input {
+  color: #3b3a36;
+  border-radius: 5%; }
+
+.pointer {
+  cursor: pointer; }
+
 /*# sourceMappingURL=main.css.map */
