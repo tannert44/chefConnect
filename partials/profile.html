@@ -37,8 +37,8 @@
     </div>
     <div class="col-xs-12 col-md-8 col-lg-8 about-you-container pale-blue-border">
       <h3 class="pointer" ng-click="changeAboutBool()">About You:</h3>
-      <p class="pointer" ng-click="changeAboutBool()">{{aboutYou}}</p>
-      <textarea ng-if="aboutYouInput" class="add-name-input form-control" ng-model="$parent.aboutYou">
+      <p class="pointer" ng-click="changeAboutBool()">{{obj.aboutYou}}</p>
+      <textarea ng-if="aboutYouInput" class="add-name-input form-control" ng-change="userChange()" ng-model="$parent.aboutYou">
       </textarea>
     </div>
   </div>
@@ -46,8 +46,8 @@
   <div class="row">
     <div class="col-xs-12 col-md-10 col-lg-10 business-info-container pale-blue-border">
       <h3 class="pointer" ng-click="changeBusinessBool()">Business Info:</h3>
-      <p class="pointer" ng-click="changeBusinessBool()">{{business}}</p>
-      <textarea ng-if="businessInput" class="add-name-input form-control" ng-model="$parent.business">
+      <p class="pointer" ng-click="changeBusinessBool()">{{obj.business}}</p>
+      <textarea ng-if="businessInput" class="add-name-input form-control" ng-change="userChange()" ng-model="$parent.business">
       </textarea>
     </div>
   </div>

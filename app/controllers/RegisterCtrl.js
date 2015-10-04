@@ -5,6 +5,11 @@ app.controller( 'RegisterCtrl', [
   function($scope, $firebaseObject, $location){
 
     var ref = new Firebase("https://xhub.firebaseio.com");
+    var authProvider = ref.getAuth().uid;
+    var userRef = new Firebase("https://xhub.firebaseio.com/profiles" + authProvider);
+    var obj = $firebaseObject(userRef);
+
+    
     
     $scope.emailInputReg= "";
     $scope.passInputReg = "";

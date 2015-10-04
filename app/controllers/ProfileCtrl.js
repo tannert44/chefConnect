@@ -13,18 +13,20 @@ app.controller( 'ProfileCtrl', [
     console.log("AUTHPROVIDER", authProvider);
 
     $scope.obj = $firebaseObject(userRef);
+
     
-    $scope.userName = "Enter Your Name Here";
+    $scope.userName = "Click To Enter Your Name.";
 
     $scope.userNameInput = false;
 
-    $scope.aboutYou = "Enter some information about yourself";
+    $scope.aboutYou = "Click to enter some information about yourself.";
 
     $scope.aboutYouInput = false;
 
-    $scope.business = "Enter some information about your job or buisnness";
+    $scope.business = "Click to enter some information about your job or buisnness.";
 
     $scope.businessInput = false;
+
 
     $scope.changeUserBool =  function(){
       console.log("Yup it works", $scope.userNameInput);
@@ -41,8 +43,10 @@ app.controller( 'ProfileCtrl', [
 
     $scope.userChange = function(){
       $scope.obj.userName = $scope.userName;
+      $scope.obj.aboutYou = $scope.aboutYou;
+      $scope.obj.business = $scope.business;
       $scope.obj.$save();
-    }
+    };
 
     $scope.changeAboutBool =  function(){
       console.log("Yup it works", $scope.userNameInput);

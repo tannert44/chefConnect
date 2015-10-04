@@ -18,7 +18,7 @@
 <div class="container-fluid">
   <div class="superior-form-container">
 <div class="container-fluid  form-container">
-  <form>
+  <form novalidate class="simple-form">
 
     <div class="row">
       
@@ -32,10 +32,10 @@
 
     <div class="row">
       
-        <div class="form-group col-xs-12 col-md-4 col-lg-4">
+        <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
             <label for="cuisineName">Technique Name:</label>
-            <input type="text" class="form-control" placeholder="Quick Pickle">
+            <input type="text" class="form-control" placeholder="Quick Pickle" ng-model="user.techniqueName">
           </div>
         </div>
       
@@ -43,10 +43,10 @@
 
     <div class="row">
       
-        <div class="form-group col-xs-12 col-md-4 col-lg-4">
+        <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
             <label for="cuisineName">Difficutly:</label>
-            <input type="text" class="form-control" placeholder="Novice, Experienced, Professional">
+            <input type="text" class="form-control" placeholder="Novice, Experienced, Professional" ng-model="user.techniqueDifficulty">
           </div>
         </div>
       
@@ -54,10 +54,10 @@
 
     <div class="row">
       
-        <div class="form-group col-xs-12 col-md-4 col-lg-4">
+        <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
             <label for="cuisineName">Instructions</label>
-            <textarea class="form-control" placeholder="">
+            <textarea class="form-control" placeholder="Enter Technique Instructions" ng-model="user.techniqueInstructions">
             </textarea>
           </div>
         </div>
@@ -65,8 +65,8 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-5 col-md-4 col-lg-4 text-right">
-        <a href="#/userprofile" type="button" class="btn btn-default btn-lg pull-right">Create</a>
+      <div class="col-xs-5 col-md-12 col-lg-12 text-right">
+        <button type="button" class="btn btn-default btn-lg pull-right" ng-click="createTech()">Create</button>
       </div>
     </div>
 

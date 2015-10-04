@@ -32,14 +32,51 @@
 
     <div class="row">
       
-        <div class="form-group col-xs-12 col-md-4 col-lg-4">
+        <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
             <label for="newUserEmal">Recipe Name:</label>
-            <input type="text" class="form-control" placeholder="Chicken Parm">  
+            <input type="text" class="form-control" placeholder="Chicken Parm" ng-model="recipeName">  
           </div>
         </div>
+      
+    </div>
 
-        <div class="form-group col-xs-12 col-md-4 col-lg-4">
+    <div class="row">
+      
+        <div class="form-group col-xs-12 col-md-12 col-lg-12">
+          <div class="email-container">
+            <label for="cuisineName">Cuisine Name:</label>
+            <input type="text" class="form-control" placeholder="Cajun" ng-model="cuisineName">
+          </div>
+        </div>
+      
+    </div>
+
+    <div class="row">
+      
+        <div class="form-group col-xs-12 col-md-12 col-lg-12">
+          <div class="email-container">
+            <label for="cuisineName">Prep Time:</label>
+            <input type="text" class="form-control" placeholder="20 minutes" ng-model="prepTime">
+          </div>
+        </div>
+      
+    </div>
+
+    <div class="row">
+      
+        <div class="form-group col-xs-12 col-md-12 col-lg-12">
+          <div class="email-container">
+            <label for="cuisineName">Cook Time:</label>
+            <input type="text" class="form-control" placeholder="40 minutes" ng-model="cookTime">
+          </div>
+        </div>
+      
+    </div>
+
+    <div class="row">
+
+      <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
             <label>Ingredients:</label>
             <div class="input-group">
@@ -52,7 +89,11 @@
           </div>
         </div>
 
-        <div class="form-group col-xs-12 col-md-4 col-lg-4">
+    </div>
+
+    <div class="row">
+
+      <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
             <label>Utensils:</label>
             <div class="input-group">
@@ -64,44 +105,11 @@
             </div> 
           </div>
         </div>
-      
+
     </div>
 
     <div class="row">
-      
-        <div class="form-group col-xs-12 col-md-4 col-lg-4">
-          <div class="email-container">
-            <label for="cuisineName">Cuisine Name:</label>
-            <input type="text" class="form-control" placeholder="Cajun">
-          </div>
-        </div>
-      
-    </div>
-
-    <div class="row">
-      
-        <div class="form-group col-xs-12 col-md-4 col-lg-4">
-          <div class="email-container">
-            <label for="cuisineName">Prep Time:</label>
-            <input type="text" class="form-control" placeholder="20 minutes">
-          </div>
-        </div>
-      
-    </div>
-
-    <div class="row">
-      
-        <div class="form-group col-xs-12 col-md-4 col-lg-4">
-          <div class="email-container">
-            <label for="cuisineName">Cook Time:</label>
-            <input type="text" class="form-control" placeholder="40 minutes">
-          </div>
-        </div>
-      
-    </div>
-
-    <div class="row">
-      <div class="col-xs-5 col-md-4 col-lg-4 text-right">
+      <div class="col-xs-5 col-md-12 col-lg-12 text-right">
         <a href="#/userprofile" type="button" class="btn btn-default btn-lg pull-right">Create</a>
       </div>
     </div>
