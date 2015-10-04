@@ -7,7 +7,7 @@
   </div>
 
   <ul class="nav nav-pills pull-right">
-    <li role="presentation"><a href="#/profile" class="logAndReg">Profile</a></li>
+    <li role="presentation"><a href="#/userprofile" class="logAndReg">Profile</a></li>
     <li role="presentation"><a href="#/browse" class="logAndReg">Browse</a></li>
     <li role="presentation" class="active"><a href="#/createrecipe" class="logAndReg">Create a Recipe</a></li>
     <li role="presentation"><a href="#/createtechnique" class="logAndReg">Create a Technique</a></li>
@@ -35,7 +35,7 @@
         <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
             <label for="newUserEmal">Recipe Name:</label>
-            <input type="text" class="form-control" placeholder="Chicken Parm" ng-model="recipeName">  
+            <input type="text" class="form-control" placeholder="Chicken Parm" ng-model="user.recipeName">  
           </div>
         </div>
       
@@ -46,7 +46,7 @@
         <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
             <label for="cuisineName">Cuisine Name:</label>
-            <input type="text" class="form-control" placeholder="Cajun" ng-model="cuisineName">
+            <input type="text" class="form-control" placeholder="Cajun" ng-model="user.cuisineName">
           </div>
         </div>
       
@@ -57,7 +57,7 @@
         <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
             <label for="cuisineName">Prep Time:</label>
-            <input type="text" class="form-control" placeholder="20 minutes" ng-model="prepTime">
+            <input type="text" class="form-control" placeholder="20 minutes" ng-model="user.prepTime">
           </div>
         </div>
       
@@ -68,7 +68,7 @@
         <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
             <label for="cuisineName">Cook Time:</label>
-            <input type="text" class="form-control" placeholder="40 minutes" ng-model="cookTime">
+            <input type="text" class="form-control" placeholder="40 minutes" ng-model="user.cookTime">
           </div>
         </div>
       
@@ -78,16 +78,10 @@
 
       <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
-            <label>Ingredients:</label>
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="2 Chicken Breast">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-plus
-"></span></button>
-              </span>
-            </div> 
+            <label for="cuisineName">Instructions: </label>
+            <textarea class="form-control" placeholder="Enter a list separated by commas: 2 Chicken Breast, 4 Eggs..." ng-model="user.recipeInstructions"></textarea>
           </div>
-        </div>
+      </div>
 
     </div>
 
@@ -95,22 +89,29 @@
 
       <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
-            <label>Utensils:</label>
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="1 12-inch non-stick skillet">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-plus
-"></span></button>
-              </span>
-            </div> 
+            <label for="cuisineName">Needed Utensils & Hardware: </label>
+            <textarea class="form-control" placeholder="Enter a list separated by commas: Smoker, 12-inch non-stick skillet..." ng-model="user.utensils"></textarea>
           </div>
-        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="form-group col-xs-12 col-md-12 col-lg-12">
+          <div class="email-container">
+            <span class="glyphicon glyphicon-eye-open eye-glyph" aria-hidden="true"></span>
+            <label class="radio-inline"><input type="radio" name="rec-availability" ng-model="user.availability" value="true">Public</label>
+            <span class="glyphicon glyphicon-eye-close eye-glyph" aria-hidden="true"></span>
+            <label class="radio-inline"><input type="radio" name="rec-availability" ng-model="user.availability" value="false">Private</label>
+          </div>
+      </div>
 
     </div>
 
     <div class="row">
       <div class="col-xs-5 col-md-12 col-lg-12 text-right">
-        <a href="#/userprofile" type="button" class="btn btn-default btn-lg pull-right">Create</a>
+        <button class="btn btn-default btn-lg pull-right" ng-click="createRec(user)">Create</button>
       </div>
     </div>
 

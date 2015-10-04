@@ -88,7 +88,7 @@ html, body {
   min-height: 100%;
   font: Trebuchet MS, Tahoma, Georgia, sans-serif;
   font-size: 1em;
-  padding-top: 150px; }
+  padding-bottom: 30px; }
 
 .profile-container {
   background-color: #3b3a36;
@@ -97,7 +97,8 @@ html, body {
   min-height: 100%;
   font: Trebuchet MS, Tahoma, Georgia, sans-serif;
   font-size: 1em;
-  padding: 20px; }
+  padding: 20px;
+  padding-bottom: 300px; }
 
 .profile-photo-container {
   margin: 10px; }
@@ -140,5 +141,8 @@ html, body {
 
 .pointer {
   cursor: pointer; }
+
+.eye-glyph {
+  margin: 5px; }
 
 /*# sourceMappingURL=main.css.map */

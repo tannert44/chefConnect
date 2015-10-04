@@ -1,8 +1,8 @@
 app.controller( 'ProfileCtrl', [
   '$scope',
   '$firebaseObject',
-  '$compile',
-  function($scope, $firebaseObject, $compile){
+  '$firebaseArray',
+  function($scope, $firebaseObject, $firebaseArray){
 
     var ref = new Firebase("https://xhub.firebaseio.com/");
 
@@ -10,10 +10,13 @@ app.controller( 'ProfileCtrl', [
 
     var userRef = new Firebase("https://xhub.firebaseio.com/profiles/" + authProvider);
 
+    var techRef = new Firebase("https://xhub.firebaseio.com/techniques/" + authProvider);
+
     console.log("AUTHPROVIDER", authProvider);
 
     $scope.obj = $firebaseObject(userRef);
 
+    $scope.techArr = $firebaseArray(techRef);
     
     $scope.userName = "Click To Enter Your Name.";
 

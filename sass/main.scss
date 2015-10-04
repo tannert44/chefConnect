@@ -115,7 +115,7 @@ html, body {
   min-height: 100%;
   font: $font-stack;
   font-size: 1em;
-  padding-top: 150px;
+  padding-bottom:30px;
 }
 
 .profile-container {
@@ -126,6 +126,7 @@ html, body {
   font: $font-stack;
   font-size: 1em;
   padding: 20px;
+  padding-bottom: 300px;
 }
 
 .profile-photo-container {
@@ -182,4 +183,8 @@ html, body {
 
 .pointer {
   cursor: pointer;
+}
+
+.eye-glyph {
+  margin: 5px;
 }

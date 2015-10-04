@@ -1,24 +1,34 @@
 app.controller( 'CreateRecCtrl', [
   '$scope',
-  '$firebaseObject',
+  '$firebaseArray',
   '$compile',
-  function($scope, $firebaseObject, $compile){
+  function($scope, $firebaseArray, $compile){
     var ref = new Firebase("https://xhub.firebaseio.com/");
 
     var authProvider = ref.getAuth().uid;
 
-    var userRef = new Firebase("https://xhub.firebaseio.com/recipes/" + authProvider);
+    var recRef = new Firebase("https://xhub.firebaseio.com/recipes/" + authProvider);
 
     console.log("AUTHPROVIDER", authProvider);
 
-    $scope.obj = $firebaseObject(userRef);
+    $scope.arr = $firebaseArray(recRef);
 
-    $scope.recipeName = "";
-    $scope.cuisineName = "";
-    $scope.prepTime = "";
-    $scope.cookTime = "";
-    $scope.ingredients = "";
-    $scope.utensils = "";
+    $scope.user ={
+      recipeName: "",
+      cuisineName: "",
+      prepTime: "",
+      cookTime: "",
+      recipeInstructions: "",
+      utensils: "",
+      availability: "true"
+    };
+
+    $scope.createRec = function(user){
+      console.log("click fired");
+      $scope.arr.$add(angular.copy(user));
+      console.log("techRefArr", $scope.arr);
+    };
+
   }
 
 ]);
