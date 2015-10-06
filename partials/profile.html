@@ -2,7 +2,7 @@
 
   <div class="navbar-header">
 
-      <a class="navbar-brand" href="#/">Brand</a>
+      <a class="navbar-brand" href="#/">chefConnect</a>
 
   </div>
 
@@ -18,7 +18,7 @@
 <div class="container-fluid name-container text-center">
   <div class="row">
     <div class="col-xs-12 col-md-10 col-lg-10">
-      <h1 class="enter-name" ng-click="changeUserBool()">{{obj.userName}}</h1>
+      <h1 class="enter-name" ng-click="changeUserBool()">User:<br>{{obj.userName}}</h1>
       <input type="text" ng-if="userNameInput" class="add-name-input" ng-change="userNameChange()" ng-model="$parent.userName">
     </div>
   </div>
@@ -27,13 +27,9 @@
 <div class="container-fluid profile-container">
 
   <div class="row">
+
     <div class="col-xs-12 col-md-2 col-lg-2 profile-photo-container pale-blue-border">
-      <p>Profile Image Here</p>
-      <p>Profile Image Here</p>
-      <p>Profile Image Here</p>
-      <p>Profile Image Here</p>
-      <p>Profile Image Here</p>
-      <p>Profile Image Here</p>
+      <img class="profile-image" ng-src="{{profile_image}}">
     </div>
     <div class="col-xs-12 col-md-8 col-lg-8 about-you-container pale-blue-border">
       <h3 class="pointer" ng-click="changeAboutBool()">About You:</h3>
@@ -41,42 +37,89 @@
       <textarea ng-if="aboutYouInput" class="add-name-input form-control" ng-change="aboutYouChange()" ng-model="$parent.aboutYou">
       </textarea>
     </div>
+
   </div>
 
+
   <div class="row">
+
     <div class="col-xs-12 col-md-10 col-lg-10 business-info-container pale-blue-border">
       <h3 class="pointer" ng-click="changeBusinessBool()">Business Info:</h3>
       <p class="pointer" ng-click="changeBusinessBool()">{{obj.business}}</p>
       <textarea ng-if="businessInput" class="add-name-input form-control" ng-change="businessChange()" ng-model="$parent.business">
       </textarea>
     </div>
+
   </div>
 
   <div class="row">
+
     <div class="col-xs-12 col-md-5 col-lg-5 pub-recipe-container pale-blue-border">
-      <input type="text" class="pull-right search-repo-inputs" placeholder="Search Public Recipes">
+      <input type="text" class="pull-right search-repo-inputs" placeholder="Search Public Recipes" ng-model="pubRecipeSearch">
       <h4>Public Recipes</h4>
-        <ul ng-repeat="recipe in recPubArr">
-          <li>{{recipe.recipeName}}</li>
+        <ul ng-repeat="recipe in recPubArr | filter: pubRecipeSearch">
+          <li ng-class="{{recipe.$id}}" ng-click="changeRecBool($event)">{{recipe.recipeName}}</li>
         </ul>
     </div>
 
     <div class="col-xs-12 col-md-5 col-lg-5 pri-recipe-container pale-blue-border">
-      <input type="text" class="pull-right search-repo-inputs" placeholder="Search Private Recipes">
+      <input type="text" class="pull-right search-repo-inputs" placeholder="Search Private Recipes" ng-model="priRecipeSearch">
       <h4>Private Recipes</h4>
-        <ul ng-repeat="recipe in recPriArr">
-          <li>{{recipe.recipeName}}</li>
+        <ul ng-repeat="recipe in recPriArr | filter: priRecipeSearch">
+          <li ng-class="{{recipe.$id}}" ng-click="changeRecBool($event)">{{recipe.recipeName}}</li>
         </ul>
     </div>
+
   </div>
 
-  <div class="col-xs-12 col-md-10 col-lg-10 techniqu-container pale-blue-border">
-      <input type="text" class="pull-right search-repo-inputs" placeholder="Search Techniques">
-      <h4>Techniques</h4>
-        <ul ng-repeat="technique in techArr">
-          <li>{{technique.techniqueName}}</li>
-        </ul>
+  <div class="row">
+
+    <div class="col-xs-12 col-md-10 col-lg-10 technique-container pale-blue-border">
+        <input type="text" class="pull-right search-repo-inputs" placeholder="Search Techniques" ng-model="techniqueSearch">
+        <h4>Techniques</h4>
+          <ul ng-repeat="technique in techArr | filter: techniqueSearch">
+            <li ng-class="{{technique.$id}}" ng-click="changeTechBool($event)">{{technique.techniqueName}}</li>
+          </ul>
     </div>
+
   </div>
+
+  <div class="row">
+
+    <div class="col-xs-12 col-md-5 col-lg-5 pub-recipe-container pale-blue-border">
+      <h4>Chosen Recipe</h4>
+        <div class="chosen-rec" ng-if="chosenRecBool">
+          <label>Recipe Name:</label>
+          <p>{{chosenRec.recipeName}}</p>
+          <label>Cuisine Name:</label>
+          <p>{{chosenRec.cuisineName}}</p>
+          <label>Prep Time:</label>
+          <p>{{chosenRec.prepTime}}</p>
+          <label>Cook Time:</label>
+          <p>{{chosenRec.cookTime}}</p>
+          <label>Ingredients:</label>
+          <p>{{chosenRec.recipeIngredients}}</p>
+          <label>Needed Utensils:</label>
+          <p>{{chosenRec.utensils}}</p>
+          <label>Instructions:</label>
+          <p>{{chosenRec.cookingInstructions}}</p>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-5 col-lg-5 pri-recipe-container pale-blue-border">
+      <h4>Chosen Technique</h4>
+        <div class="chosen-tech" ng-if="chosenTechBool">
+          <label>Technique Name:</label>
+          <p>{{chosenTech.techniqueName}}</p>
+          <label>Difficulty:</label>
+          <p>{{chosenTech.techniqueDifficulty}}</p>
+          <label>Instructions:</label>
+          <p>{{chosenTech.techniqueInstructions}}</p>
+        </div>
+    </div>
+
+  </div>
+
+
 
 </div>

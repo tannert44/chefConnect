@@ -27,6 +27,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/createtechnique.html',
         controller: 'CreateTechCtrl'
       })
+      .when('/readrepo', {
+        templateUrl: 'partials/readrepo.html',
+        controller: 'ReadRepoCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

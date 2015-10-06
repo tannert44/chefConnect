@@ -2,7 +2,7 @@
 
   <div class="navbar-header">
 
-      <a class="navbar-brand" href="#/">Brand</a>
+      <a class="navbar-brand" href="#/">chefConnect</a>
 
   </div>
 
@@ -78,8 +78,19 @@
 
       <div class="form-group col-xs-12 col-md-12 col-lg-12">
           <div class="email-container">
+            <label for="cuisineName">Ingredients: </label>
+            <textarea class="form-control" placeholder="Enter a list separated by commas: 2 Chicken Breast, 4 Eggs..." ng-model="user.recipeIngredients"></textarea>
+          </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="form-group col-xs-12 col-md-12 col-lg-12">
+          <div class="email-container">
             <label for="cuisineName">Instructions: </label>
-            <textarea class="form-control" placeholder="Enter a list separated by commas: 2 Chicken Breast, 4 Eggs..." ng-model="user.recipeInstructions"></textarea>
+            <textarea class="form-control" placeholder="Place the 2 Chicken breast in a deep dish pan..." ng-model="user.cookingInstructions"></textarea>
           </div>
       </div>
 

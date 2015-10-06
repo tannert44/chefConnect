@@ -18,7 +18,8 @@ app.controller( 'CreateRecCtrl', [
       cuisineName: "",
       prepTime: "",
       cookTime: "",
-      recipeInstructions: "",
+      recipeIngredients: "",
+      cookingInstructions: "",
       utensils: "",
       availability: "true"
     };

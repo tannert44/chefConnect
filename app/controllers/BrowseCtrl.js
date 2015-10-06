@@ -8,17 +8,9 @@ app.controller( 'BrowseCtrl', [
 
     var recRef = new Firebase("https://xhub.firebaseio.com/recipes/");
 
-    var profileArr = $firebaseArray(userRef);
+    
 
-    var techArr = $firebaseArray(techRef);
-
-    var recArr = $firebaseArray(recRef);
-
-    console.log("PROFILEARR", profileArr);
-
-    console.log("TECHARR", techArr);
-
-    console.log("RECARR", recArr);
+    
 
   }
 

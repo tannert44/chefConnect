@@ -8,6 +8,8 @@ app.controller( 'ProfileCtrl', [
 
     var authProvider = ref.getAuth().uid;
 
+    $scope.profile_image = ref.getAuth().password.profileImageURL;
+
     var userRef = new Firebase("https://xhub.firebaseio.com/profiles/" + authProvider);
 
     var techRef = new Firebase("https://xhub.firebaseio.com/techniques/" + authProvider);
@@ -28,17 +30,21 @@ app.controller( 'ProfileCtrl', [
 
     console.log("RECIPESARRAY",$scope.recPubArr);
     
-    $scope.userName = "Click To Enter Your Name.";
+    $scope.userName = "";
 
     $scope.userNameInput = false;
 
-    $scope.aboutYou = "Click to enter some information about yourself.";
+    $scope.aboutYou = "";
 
     $scope.aboutYouInput = false;
 
-    $scope.business = "Click to enter some information about your job or buisnness.";
+    $scope.business = "";
 
     $scope.businessInput = false;
+
+    $scope.chosenRecBool = false;
+
+    $scope.chosenTechBool =false;
 
     console.log(recArr);
     recArr.$loaded()
@@ -55,19 +61,6 @@ app.controller( 'ProfileCtrl', [
     });
 
 
-    $scope.changeUserBool =  function(){
-      console.log("Yup it works", $scope.userNameInput);
-
-      if($scope.userNameInput){
-        $scope.userNameInput = false;
-        console.log("Should Be False", $scope.userNameInput);
-      }else{
-        $scope.userNameInput = true;
-        console.log("Should Be True", $scope.userNameInput);
-      }
-
-    };
-
     $scope.userNameChange = function(){
       $scope.obj.userName = $scope.userName;
       $scope.obj.$save();
@@ -81,6 +74,19 @@ app.controller( 'ProfileCtrl', [
     $scope.businessChange = function(){
       $scope.obj.business = $scope.business;
       $scope.obj.$save();
+    };
+
+    $scope.changeUserBool =  function(){
+      console.log("Yup it works", $scope.userNameInput);
+
+      if($scope.userNameInput){
+        $scope.userNameInput = false;
+        console.log("Should Be False", $scope.userNameInput);
+      }else{
+        $scope.userNameInput = true;
+        console.log("Should Be True", $scope.userNameInput);
+      }
+
     };
 
     $scope.changeAboutBool =  function(){
@@ -108,6 +114,34 @@ app.controller( 'ProfileCtrl', [
       }
 
     };
+
+    $scope.changeRecBool =function($event){
+
+      var clickedRec = $event.currentTarget;
+      var clickedRecKey = angular.element(clickedRec).attr('ng-class');
+      $scope.chosenRec = recArr.$getRecord(clickedRecKey);
+
+      if($scope.chosenRecBool){
+        $scope.chosenRecBool = false;
+      }else{
+        $scope.chosenRecBool = true;
+      }
+
+    };
+
+    $scope.changeTechBool =function($event){
+
+      var clickedTech = $event.currentTarget;
+      var clickedTechKey = angular.element(clickedTech).attr('ng-class');
+      $scope.chosenTech = $scope.techArr.$getRecord(clickedTechKey);
+
+      if($scope.chosenTechBool){
+        $scope.chosenTechBool = false;
+      }else{
+        $scope.chosenTechBool = true;
+      }
+    };
+
   }
 
 ]);
